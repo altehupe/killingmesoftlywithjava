@@ -23,30 +23,10 @@ public class Bubbles {
 		for(int i = 0; i < length; i++) {
 			System.out.println(height[i]);
 		}
-
-		//first for: preventing just [i] and [i+1] being compared all the time
-		//second for:	repeating if construct according to length of array (-1, height[6] doesn't exist)
-		//if: height[i] is bigger than height[i+1], please remain calm and save height[i] in slot.
-		//height[i] is then filled with height[i+1], and height[i+1] with our temporary boy next door: slot.
-		//see that?! they actually switched! ha, computer says yes!
-		for (int j = 0; j < length; j++) {
-			for (int i = 0; i < length-1; i++) {
-				if (height[i] > height[i+1]) {
-					slot = height[i];
-					height[i] = height[i+1];
-					height[i+1] = slot;
-				}
-			}
-
-		}
-
-		//displaying all sorted heights, again using a for statement similiar to the one we already used in the
-		//beginning for displaying all unsorted heights.
-		System.out.println("");
-		System.out.println("Sorted:");
-		for (int i = 0 ; i < length; i++) {
-			System.out.println(""+ height[i] +"");
-			}
+		
+		//Sorting should work a little faster this way - please test :)
+		Arrays.sort(height);
+		System.out.println(Arrays.toString(height));
 
 	}
 
